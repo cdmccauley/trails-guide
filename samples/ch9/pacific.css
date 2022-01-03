@@ -1,0 +1,164 @@
+* { 
+	box-sizing: border-box;
+}
+body {
+	background-color: #eaeaea;	
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+/* ===== header section ==== */
+header {
+	background-color: #002171;
+	color: #ffffff;
+	height: 120px;
+	text-align: center;
+	padding-top: 30px;
+	padding-left: 3em;
+}
+header a {
+	text-decoration: none;
+}
+header a:link {
+	color: #ffffff;
+}
+header a:visited {
+	color: #ffffff;
+}
+header a:hover {
+	color: #90c7e3;
+}
+/* ===== nav section ==== */
+nav {
+	font-weight: bold;
+	padding: 1.5em; 
+	font-size: 120%;
+	float: left;
+	width: 160px;
+}
+nav a {
+	text-decoration: none;
+}
+nav ul {
+	list-style-type: none;
+	margin: 0px;
+	padding-left: 0px;
+	font-size: 1.2em;
+}
+nav a:link {
+	color: #5c7fa3;
+}
+nav a:visited {
+	color: #344873;
+}
+nav a:hover {
+	color: #a52a2a;
+}
+/* end of rules for nav */
+h1 {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 3em;
+	letter-spacing: 0.25em;
+}
+h2 {
+	color: #1976d2;
+	font-family: Georgia, "Times New Roman", serif;
+	text-shadow: 1px 1px 1px #cccccc; /* 3rd argument is an optional blur-radius */
+}
+h3 {
+	color: #000033;
+	font-family: Georgia, "Times New Roman", serif;
+}
+/*the section replaced the description list chapter 7, student may remove the dt style element*/
+dt {
+	color: #002171;
+}
+.resort {
+	color: #1976d2;
+	font-weight: bold;
+}
+main ul {
+	list-style-image: url(marker.gif);
+}
+footer {
+	padding: 2em;
+	font-size: 75%;
+	font-style: italic;
+	text-align: center;
+	font-family: Georgia, "Times New Roman", serif;
+	background-color: #ffffff;
+	margin-left: 190px;
+}
+#contact {
+	font-size: 90%;
+}
+#wrapper {
+	margin-right: auto;
+	margin-left: auto;
+	width: 80%;
+	background-color: #90c7e3;
+	min-width: 960px;
+	max-width: 2048px;
+	box-shadow: 3px 3px #333333; /* 3rd argument is optional blur-radius, 4th argument is optional spread-radius */
+	border: 1px solid #000033;
+	background-image: linear-gradient(to bottom, #ffffff, #90c7e3);
+	background-repeat: no-repeat;	
+}
+main {
+	padding: 1px 20px 20px 30px;
+	display: block;
+	background-color: #ffffff;
+	margin-left: 190px;
+	overflow: auto;
+}
+#homehero {
+	height: 300px;
+	background-image: url(coast2.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin-left: 190px;
+}
+#yurthero {
+	height: 300px;
+	background-image: url(yurt.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin-left: 190px;
+}
+#trailhero {
+	height: 300px;
+	background-image: url(trail.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin-left: 190px;
+}
+section {
+	float: left;
+	width: 33%;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+/* NEW */
+#special {
+	clear: both;
+}
+table {
+	border: 2px solid #3399cc;
+	border-collapse: collapse;
+}
+td, th {
+	padding: 0.5em;
+	border: 2px solid #3399cc;
+}
+td {
+	text-align: center;
+}
+.text {
+	text-align: left;
+}
+tr:nth-of-type(odd) {
+	background-color: #bddff0;
+}
+

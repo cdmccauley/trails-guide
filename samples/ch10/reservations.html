@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<title>Pacific Trails Resort :: Reservations</title>  <!-- changed title -->
+	<meta charset="utf-8">
+	<link href="pacific.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<div id="wrapper">
+	
+	<header>
+		<h1><a href="index.html">Pacific Trails Resort</a></h1>
+	</header>
+
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="yurts.html">Yurts</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="reservations.html">Reservations</a><li>
+		</ul>
+	</nav>
+
+	<!-- removed div for image -->
+		
+	<main>
+		<h2>Reservations at Pacific Trails</h2>
+		<h3>Contact Us Today!</h3>
+		<p>Required fields are marked with an asterisk *.</p>
+		
+		<form method="post" action="https://webdevbasics.net/scripts/pacific.php">
+			
+			<label for="myFName">*First Name: </label>
+			<input name="myFName" id="myFName" required="required">
+
+			<label for="myLName">*Last Name:</label> 
+			<input name="myLName" id="myLName" required="required">
+
+			<label for="myEmail">*E-mail Address:</label> 
+			<input type="email" name="myEmail" id="myEmail" size="35" required="required">
+
+			<label for="myPhone">Phone Number:</label>
+			<input type="tel" name="myPhone" id="myPhone" maxlength="12">
+
+			<label for="myArrival">Arrival Date:</label>
+			<input type="date" name="myArrival" id="myArrival">
+		
+			<label for="myDays">Nights:</label>
+			<input type="number" name="myDays" id="myDays" min="1" max="14">
+		
+			<label for="myComments">*Comments:</label>
+			<textarea name="myComments" id="myComments" rows="2" cols="30" required="required"></textarea>
+		
+			<input type="submit" value="Submit">
+		
+		</form>	
+		
+		<div id="contact">  
+			<span class="resort">Pacific Trails Resort</span><br>
+			12010 Pacific Trails Road<br>
+			Zephyr, CA 95555<br>
+			<br>
+			888-555-5555<br>
+			<br>
+		</div>
+	
+	</main>
+
+	<footer>
+		Copyright &copy; 2020 Pacific Trails Resort<br>
+		<a href="mailto:student.name@davistech.edu">student.name@davistech.edu</a>  
+	</footer>
+
+	</div>  <!-- end of the wrapper div -->
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+body {
+	background-color: #ffffff;
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;  /* new */
+}
+header {
+	background-color: #002171;
+	color: #ffffff;
+	background-image: url(sunset.jpg);  /* new */
+	background-position: right;			/* new */
+	background-repeat: no-repeat;		/* new */
+	line-height: 400%;					/* new */
+	text-indent: 1em;					/* new */
+}
+nav {
+	background-color: #bbdefb;
+	font-weight: bold;				/* new */
+}
+nav a {	   /* NEW */
+	text-decoration: none;
+}
+h1 {
+	margin-bottom: 0;
+	font-family: Georgia, "Times New Roman", serif; /* new */
+	/* be sure to look for quotations around second font */
+}
+h2 {
+	color: #1976d2;
+	font-family: Georgia, "Times New Roman", serif; /* new */
+	/* be sure to look for quotations around second font */
+}
+h3 {	   /* NEW */
+	color: #000033;
+	font-family: Georgia, "Times New Roman", serif; /* new */
+	/* be sure to look for quotations around second font */
+}
+dt {
+	color: #002171;
+}
+.resort {
+	color: #1976d2;
+	font-weight: bold;		/* new */
+}
+/* === NEW === */
+ul {
+	list-style-image: url(marker.gif);
+}
+footer {
+	font-size: 75%;
+	font-style: italic;
+	text-align: center;
+	font-family: Georgia, "Times New Roman", serif;
+	/* be sure to look for quotations around second font */
+}
+#contact {
+	font-size: 90%;
+}
