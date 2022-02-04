@@ -14,16 +14,21 @@ const getFeedback = (name, result) => {
 
 const attributeTest = (expected, actual) => {
   let result = false;
-  // console.log(Object.keys(actual).reduce((passed, key) => passed && expected[key.name] ? true : false, true))
-  result = Array.from(actual).reduce((passed, key) => passed && expected[key.name], true);
-  // console.log(actual["lng"]);
+  result = Array.from(actual).reduce(
+    (passed, key) =>
+      passed && expected[key.name] && expected[key.name] === key.value,
+    true
+  );
   return result;
 };
 
-// test functions
+/*/
+ * test functions
+/*/
 const doctypeTest = (doc) => {
   let result = false;
   const element = doc.doctype;
+  console.log(element);
   if (element) {
     const type = element.toString().toLowerCase() === "[object documenttype]";
     const children = element.childNodes.length === 0;
@@ -48,12 +53,8 @@ const htmlTest = (doc) => {
     const previousSibling =
       element.previousSibling.toString().toLowerCase() ===
       "[object documenttype]";
-    const nextSibling = element.nextSibling === null;
+    const nextSibling = element.nextElementSibling === null;
     const parent = element.parentElement === null;
-    // const attributes = element.lang.toLowerCase() === "en";
-    // const attributes =
-    //   Array.from(element.attributes).length === 1 &&
-    //   element.attributes.lang.value.toLowerCase() === "en";
     const expectedAttributes = { lang: "en" };
     const attributes = attributeTest(expectedAttributes, element.attributes);
     result = children && previousSibling && nextSibling && parent && attributes;
@@ -61,10 +62,51 @@ const htmlTest = (doc) => {
   getFeedback("<html>", result);
 };
 
-// app functions
+const headTest = (doc) => {
+  let result = false;
+  const elements =
+    doc.all !== undefined && doc.all.length > 0
+      ? Array.from(doc.all).filter((e) => e.tagName.toLowerCase() === "head")
+      : undefined;
+  if (elements && elements.length === 1) {
+    const element = elements.pop();
+    console.log(element);
+    const children = element.childElementCount === 2;
+    const previousSibling = element.previousElementSibling === null;
+    const nextSibling =
+      element.nextElementSibling.tagName.toLowerCase() === "body";
+    const parent = element.parentElement.tagName.toLowerCase() === "html";
+    result = children && previousSibling && nextSibling && parent;
+  }
+  getFeedback("<head>", result);
+};
+
+const bodyTest = (doc) => {
+  let result = false;
+  const elements =
+    doc.all !== undefined && doc.all.length > 0
+      ? Array.from(doc.all).filter((e) => e.tagName.toLowerCase() === "body")
+      : undefined;
+  if (elements && elements.length === 1) {
+    const element = elements.pop();
+    console.log(element); // WORKING HERE
+    const children = element.childElementCount === 4;
+    const previousSibling = element.previousElementSibling.tagName.toLowerCase() === "head";
+    const nextSibling = element.nextElementSibling === null;
+    const parent = element.parentElement.tagName.toLowerCase() === "html";
+    result = children && previousSibling && nextSibling && parent;
+  }
+  getFeedback("<body>", result);
+};
+
+/*/
+ * app functions
+/*/
 const analyzeDoc = (doc) => {
   doctypeTest(doc);
   htmlTest(doc);
+  headTest(doc);
+  bodyTest(doc);
 };
 
 const persistDoc = (file, doc) => {
